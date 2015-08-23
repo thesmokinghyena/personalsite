@@ -1,0 +1,34 @@
+<%= form_for(@post) do |f| %>
+  <div class="row">
+    <div class="col-md-4">
+      <%= f.label :author %>
+      <%= f.text_field :author, class: 'form-control' %>
+      <% if @post.errors.include?(:author) %>
+        <div id="field_error">This post needs an author!</div>
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <%= f.label :title %>
+      <%= f.text_field :title, class: 'form-control' %>
+      <% if @post.errors.include?(:title) %>
+        <div id="field_error"><%= @post.errors[:title].to_sentence%></div>
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8">
+      <%= f.label :content %>
+      <%= f.text_area :content, class: 'form-control' %>
+      <% if @post.errors.include?(:content) %>
+        <div id="field_error"><%= @post.errors[:content].to_sentence%></div>
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2">
+      <%= f.submit "Create post", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>

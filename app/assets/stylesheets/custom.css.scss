@@ -1,0 +1,90 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+html,body {
+  height:100%;
+  padding-top: 28px;
+}
+
+a, a:active, a:focus {
+  outline: none;
+}
+
+ul.nav li:hover {
+  background-color: #eee;
+}
+
+.middle {
+  margin-bottom: 100px;
+}
+
+.footer {
+  text-align: center;
+  background-color: #eee;
+}
+
+.sidebar-right {
+  border-left: 1px solid #eee;
+}
+
+/* forms */
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing();
+}
+
+input {
+  height: auto !important;
+}
+
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+#field_error {
+  color: red;
+  padding-bottom: 20px;
+}
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    border-color: red;
+  }
+}
+
+.clickable
+{
+    cursor: pointer;
+}
+
+.clickable .glyphicon
+{
+    background: rgba(0, 0, 0, 0.15);
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 4px
+}
+
+.panel-heading span
+{
+    margin-top: -23px;
+    font-size: 15px;
+    margin-right: -9px;
+}
+a.clickable { color: inherit; }
+a.clickable:hover { text-decoration:none; }

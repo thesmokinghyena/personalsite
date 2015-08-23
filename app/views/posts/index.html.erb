@@ -1,0 +1,12 @@
+<div class="panel-group">
+  <% @posts.each do |v| %>
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <%= v.title %> by <%= v.author %>
+      </div>
+      <div class="panel-body">
+        <%= v.content %>
+      </div>
+    </div>
+  <% end %>
+</div>

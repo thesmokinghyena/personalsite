@@ -1,0 +1,33 @@
+<% provide(:title, 'View Guestbook') %>
+
+<h1 style="color: #FF69B4">Kind words from visitors <i class="fa fa-heart"></i>
+</h1>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Comment</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @visitors.each do |v| %>
+        <tr>
+          <td><%= v.name %></td>
+          <td><%= v.email %></td>
+          <td>
+            <% if v.comment.length > 20%>
+              <%= v.comment[0..19] %>...(
+              <%= link_to 'See more', visitor_path(v.id) %>)
+            <% else %>
+              <%= v.comment %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+<div style="text-align: center">
+  <%= link_to 'Let us know you were here!', new_visitor_path %>
+</div>

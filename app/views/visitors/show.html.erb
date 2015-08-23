@@ -1,0 +1,26 @@
+<% provide(:title, 'Deets') %>
+
+<h1 id="header">Comment details</h1>
+
+<div align="center">
+<h3>Name: </h3>
+<p><%= @visitor.name %></p>
+
+<h3>Comment:</h3>
+<p style="width:250px; word-wrap: break-word">
+  <%= @visitor.comment %>
+</p>
+
+<h3>Email: </h3>
+<p><%= @visitor.email %></p>
+</div>
+
+
+
+
+
+
+<div id="footer">
+  <%= link_to 'Edit', edit_visitor_path(@visitor) %> |
+  <%= link_to 'Back', visitors_path %>
+</div>
